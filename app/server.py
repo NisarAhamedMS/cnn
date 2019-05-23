@@ -19,7 +19,7 @@ app = Starlette()
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Requested-With', 'Content-Type'])
 app.mount('/static', StaticFiles(directory='app/static'))
 
-#MODEL_PATH = path/'models'/f'{model_file_name}.h5'
+MODEL_PATH = path/'models'/f'{model_file_name}.h5'
 IMG_FILE_SRC = '/tmp/saved_image.png'
 
 async def download_file(url, dest):
@@ -31,7 +31,7 @@ async def download_file(url, dest):
 
 async def setup_model():
     #UNCOMMENT HERE FOR CUSTOM TRAINED MODEL
-      await download_file(model_file_url)
+      await download_file(model_file_url, MODEL_PATH)
       model = load_model(model_file_url) # Load your Custom trained modelel
       model._make_predict_function()
     #model = ResNet50(weights='imagenet') # COMMENT, IF you have Custom trained model
