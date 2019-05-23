@@ -12,7 +12,7 @@ import base64, sys, numpy as np
 
 path = Path(__file__).parent
 model_file_url = 'https://www.dropbox.com/s/dsnpff1rwqjfgss/weights.best_16-0.98.h5?dl=0'
-model_file_name = 'model'
+model_file_name = 'weights.best_16-0.98'
 classes=['Maize', 'Fat Hen', 'Common Chickweed', 'Cleavers', 'Charlock', 'Loose Silky-bent', 'Small-flowered Cranesbill', 'Black-grass', 'Scentless Mayweed', 'Sugar beet', 'Common wheat', 'Shepherds Purse']
 
 app = Starlette()
@@ -30,11 +30,11 @@ async def download_file(url, dest):
             with open(dest, 'wb') as f: f.write(data)
 
 async def setup_model():
-    #UNCOMMENT HERE FOR CUSTOM TRAINED MODEL
+      #UNCOMMENT HERE FOR CUSTOM TRAINED MODEL
       await download_file(model_file_url, MODEL_PATH)
       model = load_model(MODEL_PATH) # Load your Custom trained modelel
       model._make_predict_function()
-    #model = ResNet50(weights='imagenet') # COMMENT, IF you have Custom trained model
+      #model = ResNet50(weights='imagenet') # COMMENT, IF you have Custom trained model
       return model
 
 # Asynchronous Steps
