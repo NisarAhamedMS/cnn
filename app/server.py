@@ -11,7 +11,7 @@ import uvicorn, aiohttp, asyncio
 import base64, sys, numpy as np
 
 path = Path(__file__).parent
-model_file_url = 'https://www.dropbox.com/home?preview=weights.best_16-0.98.h5'
+model_file_url = 'https://www.dropbox.com/s/dsnpff1rwqjfgss/weights.best_16-0.98.h5?dl=0'
 model_file_name = 'model'
 classes=['Maize', 'Fat Hen', 'Common Chickweed', 'Cleavers', 'Charlock', 'Loose Silky-bent', 'Small-flowered Cranesbill', 'Black-grass', 'Scentless Mayweed', 'Sugar beet', 'Common wheat', 'Shepherds Purse']
 
