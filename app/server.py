@@ -11,7 +11,7 @@ import uvicorn, aiohttp, asyncio
 import base64, sys, numpy as np
 
 path = Path(__file__).parent
-model_file_url = 'https://drive.google.com/uc?export=download&confirm=0cYA&id=1ZMGK7VONFfu880hjbsMmliouIOM4rvwB'
+model_file_url = 'https://drive.google.com/uc?export=download&confirm=xNaw&id=1ZMGK7VONFfu880hjbsMmliouIOM4rvwB'
 model_file_name = 'model'
 classes=['Maize', 'Fat Hen', 'Common Chickweed', 'Cleavers', 'Charlock', 'Loose Silky-bent', 'Small-flowered Cranesbill', 'Black-grass', 'Scentless Mayweed', 'Sugar beet', 'Common wheat', 'Shepherds Purse']
 
