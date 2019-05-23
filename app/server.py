@@ -12,14 +12,14 @@ import base64, sys, numpy as np
 
 path = Path(__file__).parent
 model_file_url = 'https://www.dropbox.com/s/dsnpff1rwqjfgss/weights.best_16-0.98.h5?dl=0'
-model_file_name = 'weights.best_16-0.98'
-classes=['Maize', 'Fat Hen', 'Common Chickweed', 'Cleavers', 'Charlock', 'Loose Silky-bent', 'Small-flowered Cranesbill', 'Black-grass', 'Scentless Mayweed', 'Sugar beet', 'Common wheat', 'Shepherds Purse']
+model_file_name = 'my_model'
+#classes=['Maize', 'Fat Hen', 'Common Chickweed', 'Cleavers', 'Charlock', 'Loose Silky-bent', 'Small-flowered Cranesbill', 'Black-grass', 'Scentless Mayweed', 'Sugar beet', 'Common wheat', 'Shepherds Purse']
 
 app = Starlette()
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Requested-With', 'Content-Type'])
 app.mount('/static', StaticFiles(directory='app/static'))
 
-MODEL_PATH = path/'models'/f'{model_file_name}.h5'
+MODEL_PATH = path/'models'/f'{model_file_name}.hdf5'
 IMG_FILE_SRC = '/tmp/saved_image.png'
 
 async def download_file(url, dest):
